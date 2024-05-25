@@ -1,0 +1,236 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+  }
+  .main-body {
+    width: 100%;
+    min-height: 100vh;
+    background: url("https://store.akamai.steamstatic.com/public/images/v6/colored_body_top.png?v=2")
+      center top no-repeat #1b2838;
+    background: #1b2838;
+  }
+  .header {
+    margin: auto;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: #171d25;
+  }
+  header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  header ul li {
+    list-style: none;
+    margin-left: 20px;
+    font-size: large;
+    font-weight: 500;
+  }
+  header ul li a {
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+  }
+  header ul li a:hover {
+    color: #c6d4df;
+  }
+  header ul li a.active {
+    color: #1a9fff;
+    text-decoration: underline;
+  }
+  
+  .middle-navigator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    padding: 16px;
+    height: 40px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .navigation-links {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    height: 100%;
+  }
+  .navigation-links li {
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+  }
+  .search-area {
+    display: flex;
+    align-content: center;
+  }
+  #search-icon {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+  }
+  #search-icon img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  main {
+    display: flex;
+    gap: 70px;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 40px;
+  }
+  
+  .genres-area {
+    width: 185px;
+  }
+  .genres-header {
+    margin-top: 20px;
+    color: #536f86;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  .genres-area ul {
+    color: #7a8b9d;
+    cursor: pointer;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    list-style-type: none;
+  }
+  .genres-area ul li:hover {
+    color: #54a5d4;
+  }
+  .genres-group {
+    font-size: 15px;
+    font-weight: 550;
+  }
+  
+  .games-list {
+    background-color: #57667d;
+    padding: 0 12px;
+  }
+  .navigation-types {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding: 16px;
+    align-items: center;
+    list-style-type: none;
+    color: #c6d4df;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .navigation-types li:hover {
+    background-color: gray;
+  }
+  .navigation-types li.active {
+    color: white;
+    border-bottom: 2px solid #fff;
+  }
+  
+  .games {
+    background-color: #444b57;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 4px;
+    height: 110px;
+    display: flex;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    flex-grow: 1;
+  }
+  .info-games img {
+    width: 240px;
+    height: 100px;
+    margin: 5px 0;
+  }
+  .info-games info {
+    display: inline;
+  }
+  
+  .game-tags {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+  .game-tags li {
+    background-color: rgba(112, 129, 137, 0.15);
+    color: #a5b0b6;
+    padding: 5px;
+    font-size: 12px;
+  }
+  
+  .game-cta {
+    display: flex;
+    align-items: flex-end;
+    font-size: 14px;
+  }
+  .buttons {
+    background-image: radial-gradient(
+      circle at top left,
+      #85a805 10%,
+      #6a8704 80%
+    );
+    color: #dfe3e6;
+    padding: 9px 20px;
+    height: 38px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    min-width: 125px;
+  }
+  .btn-add-to-cart:hover {
+    filter: brightness(120%);
+  }
+  .price {
+    padding: 9px 20px;
+    height: 38px;
+    align-self: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navigation-links {
+      gap: 20px;
+    }
+  
+    main {
+      flex-direction: column;
+    }
+  }
+  .btn-show-more-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+  }
+  .btn-show-more {
+    border: none;
+    line-height: 32px;
+    color: #dfe3e6;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    width: 40%;
+    white-space: nowrap;
+    padding: 0 10px;
+    background-color: rgba(255, 255, 255, .2);
+  }
+
