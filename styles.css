@@ -162,6 +162,9 @@
   .info-games info {
     display: inline;
   }
+  .info-games .games {
+    padding: 0 5px;
+  }
   
   .game-tags {
     list-style: none;
@@ -195,8 +198,9 @@
     justify-content: center;
     min-width: 125px;
   }
-  .btn-add-to-cart:hover {
+  .buttons:hover {
     filter: brightness(120%);
+    cursor: pointer;
   }
   .price {
     padding: 9px 20px;
@@ -233,4 +237,6 @@
     padding: 0 10px;
     background-color: rgba(255, 255, 255, .2);
   }
-
+  .btn-show-more:hover {
+    filter: brightness(120%);
+  }
