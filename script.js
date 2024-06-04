@@ -59,6 +59,9 @@ const renderGameLists = async () => {
       console.log(game);
       const div = document.createElement("div");
       div.className = "games";
+      div.onclick = () => {
+        renderSingleGame()
+      }
       div.innerHTML = `
        <div class="pictures">
        <img
@@ -97,12 +100,17 @@ const renderGameLists = async () => {
     console.log("error", error);
   }
 };
-renderGameLists();
+
 
 let searchIcon = document.getElementById("search-icon");
 searchIcon.onclick = () => {
   search = document.getElementById("search-form").value;
   renderGameLists()    
+}
+
+const renderSingleGame = async () => {
+  let gameDetails = document.getElementById("main-area");
+  gameDetails.innerHTML = "";
 }
 
 
