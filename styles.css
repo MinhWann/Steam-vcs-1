@@ -107,6 +107,7 @@
     flex-direction: column;
     gap: 5px;
     list-style-type: none;
+    text-transform: capitalize;
   }
   .genres-area ul li:hover {
     color: #54a5d4;
@@ -176,6 +177,7 @@
     color: #a5b0b6;
     padding: 5px;
     font-size: 12px;
+    text-transform: capitalize;
   }
   
   .game-cta {
