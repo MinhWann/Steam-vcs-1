@@ -60,7 +60,7 @@ const renderGameLists = async () => {
       const div = document.createElement("div");
       div.className = "games";
       div.onclick = () => {
-        renderSingleGame()
+        renderSingleGame(game.appid)
       }
       div.innerHTML = `
        <div class="pictures">
@@ -100,6 +100,7 @@ const renderGameLists = async () => {
     console.log("error", error);
   }
 };
+renderGameLists();
 
 
 let searchIcon = document.getElementById("search-icon");
@@ -107,11 +108,102 @@ searchIcon.onclick = () => {
   search = document.getElementById("search-form").value;
   renderGameLists()    
 }
-
-const renderSingleGame = async () => {
+const renderSingleGame = async (appid) => {
+  console.log(appid)
+  let url = `https://steam-api-dot-cs-platform-306304.et.r.appspot.com/single-game/${appid}`
+  const response = await fetch(url) 
+  const data = await response.json();
+  console.log(data.data)
+  let game = data.data;
+  let gameBackground = document.getElementById("page-background")
+  gameBackground.style.background = `url('${game.background}')`;
   let gameDetails = document.getElementById("main-area");
-  gameDetails.innerHTML = "";
+  gameDetails.classList.add("flex-column");
+  gameDetails.innerHTML = `<div class="name-and-communityhub center">
+          <div class="single-game-name">${game.name}</div>
+          <button class="community-hub">Community Hub</button>
+        </div>
+        <div class="page-background-shade">
+          <div class="single-game-info center">
+            <div class="single-game-details">
+              <img class="single-game-picture" src="${game.header_image}">
+              <div class="language-and-platform">
+                <div class="header-section-styles">
+                  <div>Include total ${game.achievements} achievements</div>
+                  <div>Supported Platforms</div>
+                </div>
+                <div class="details-section-styles">
+                  <img src="">
+                  <div class="platforms">
+                    <ul class="ul-platforms">
+                      <li>Windows</li>
+                      <li>Mac</li>
+                      <li>Linux</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="description-area">
+              <img class="game-header-img" src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/03/steam-logo-1.jpg">
+              <div class="description-texts">
+                ${game.description}
+              </div>
+              <div class="overall-details">
+                <div class="details-wrap">
+                  <div class="header-section-styles">
+                    <div>Overall Reviews</div>
+                    <div>Total Reviews</div>
+                  </div>
+                  <div class="details-section-styles">
+                    <div>Mostly Positive (84%)</div>
+                    <div>1005586</div>
+                  </div>
+                </div>
+              </div>
+              <div class="overall-details">
+                <div class="details-wrap">
+                  <div class="header-section-styles">
+                    <div>Release Date</div>
+                  </div>
+                  <div class="details-section-styles">
+                    <div>21 Aug 12</div>
+                  </div>
+                </div>
+              </div>
+              <div class="overall-details">
+                <div class="details-wrap">
+                  <div class="header-section-styles">
+                    <div>Developer</div>
+                    <div>Publisher</div>
+                  </div>
+                  <div class="details-section-styles">
+                    <div>Valve</div>
+                    <div>Valve</div>
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <div class="popular-tags-style">Popular user-defined tags for this product</div>
+                <ul class="popular-tags">
+                  <li>Free to Play</li>
+                  <li>MOBA</li>
+                  <li>Multiplayer</li>
+                  <li>Strategy</li>
+                  <li>PvP</li>
+                  <li>+</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>";`
+        const ul = gameDetails.querySelector(".ul-platforms");
+      ul.innerHTML = "";
+      game.platforms.forEach((tag) => {
+        const li = document.createElement("li");
+        li.innerHTML = tag;
+        ul.appendChild(li);
+      });
 }
-
 
 
