@@ -7,9 +7,8 @@
   .main-body {
     width: 100%;
     min-height: 100vh;
-    background: url("https://store.akamai.steamstatic.com/public/images/v6/colored_body_top.png?v=2")
+    background: url("https://static.vecteezy.com/system/resources/previews/030/778/034/non_2x/concept-of-web-banner-magic-color-galaxy-horizontal-space-background-with-realistic-nebula-stardust-and-shining-stars-infinite-universe-and-starry-night-sky-vector.jpg")
       center top no-repeat #1b2838;
-    background: #1b2838;
   }
 
   .center {
@@ -32,7 +31,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
     background-color: #171d25;
   }
   .header-flex{
@@ -40,6 +38,11 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+  .header-flex-new{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   header ul {
     display: flex;
@@ -51,18 +54,16 @@
     margin-left: 20px;
     font-size: large;
     font-weight: 500;
+    color: #dcdedf;
   }
-  header ul li a {
-    text-decoration: none;
-    color: white;
-    border-radius: 20px;
+  header ul li:hover {
+    cursor: pointer;
+    filter: brightness(200%);
   }
-  header ul li a:hover {
-    color: #c6d4df;
-  }
-  header ul li a.active {
+  header ul li.active {
     color: #1a9fff;
     text-decoration: underline;
+    filter: brightness(100%);
   }
   
   /*page background*/
@@ -79,13 +80,14 @@
     padding: 16px;
     height: 40px;
     margin: auto;
-    background-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%);
   }
   .navigation-links {
     display: flex;
     gap: 32px;
     align-items: center;
     height: 100%;
+    line-height: 34px;
   }
   .navigation-links li {
     list-style: none;
@@ -97,6 +99,10 @@
     color: white;
     text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+  }
+  .navigation-links li:hover {
+    filter: brightness(30%);
+    color: white;
   }
   .search-area {
     display: flex;
@@ -154,7 +160,7 @@
     transform: translateX(-50%);
   }
   .games-list {
-    background-color: #57667d;
+    background-image: linear-gradient(0deg, rgb(44, 48, 55) 0%, rgb(80, 95, 110) 100%);
     padding: 0 12px;
   }
   .navigation-types {
@@ -177,7 +183,7 @@
   }
   
   .games {
-    background-color: #444b57;
+    background: radial-gradient(ellipse at top left, #42454c99, #25282e66);
     border-radius: 5px;
     color: white;
     margin-bottom: 4px;
@@ -202,7 +208,9 @@
   .info-games .games {
     padding: 0 5px;
   }
-  
+  .game-name {
+    color: #e5e5e5;
+  }
   .game-tags {
     list-style: none;
     display: flex;
@@ -253,7 +261,7 @@
     .navigation-links {
       gap: 20px;
     }
-  
+
 
   }
   .btn-show-more-wrapper {
@@ -319,55 +327,73 @@
     background: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.4) 100%);
   }
   .single-game-details {
-  width: 66%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+    width: 66%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
   .single-game-picture {
-  height: 68%;   
-  width: 100%;
+    height: 68%;   
+    width: 100%;
   }
   .language-and-platform {
-  height: 20%;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
   }
   .description-area {
-  width: 34%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    width: 34%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .game-header-img {
     width: 324px;
     height: 151px;
   }
   .description-texts {
-  color: #c6d4df;
-  font-size: 13px;
+    color: #c6d4df;
+    font-size: 13px;
   }
   .overall-details {
-  display: grid;
-  grid-template-columns: auto auto;
+    display: grid;
+    grid-template-columns: auto auto;
   }
   .details-wrap {
-  display: flex;
-  flex-direction: row;
-  gap: 28px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
   }
   .header-section-styles {
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #556772;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #556772;
+    width: 120px;
+  }
+  .second-header-section-styles {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #556772;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
   .details-section-styles {
-  text-transform: capitalize;
-  font-size: 12px;
-  color: #66C0F4;
+    text-transform: capitalize;
+    font-size: 12px;
+    color: #66C0F4;
+  }
+  .second-details-section-styles {
+    text-transform: capitalize;
+    font-size: 12px;
+    color: #66C0F4;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
   .popular-tags-style {
     text-transform: capitalize;
@@ -377,7 +403,7 @@
   .popular-tags {
     display: flex;
     flex-direction: row;
-    gap: 4px;
+    gap: 8px;
     color: #66C0F4;
     list-style-type: none;
   }
@@ -386,11 +412,12 @@
     font-size: 12px;
     padding: 0 4px;
     border-radius: 2px;
+    text-transform: capitalize;
   }
   .ul-platforms {
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 16px;
   }
   .ul-platforms li {
     list-style-type: none;

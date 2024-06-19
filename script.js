@@ -69,7 +69,7 @@ const renderGameLists = async () => {
        />
      </div>
     <div class="info">
-      <div>${game.name}</div>
+      <div class="game-name">${game.name}</div>
       <ul class="game-tags">
         <li>Action</li>
         <li>FPS</li>
@@ -80,7 +80,7 @@ const renderGameLists = async () => {
     <div class="game-cta">
       <div class="game-price">
         <div id="CS2-price" class="price">${
-          game.price === 0 ? "Free" : game.price
+          game.price === 0 ? "Free" : game.price 
         }</div>
       </div>
       <button class="buttons">${
@@ -117,6 +117,9 @@ const renderSingleGame = async (appid) => {
   let game = data.data;
   let gameBackground = document.getElementById("page-background")
   gameBackground.style.background = `url('${game.background}')`;
+  let headerNew = document.querySelector(".header-flex");
+  headerNew.classList.remove("header-flex");
+  headerNew.classList.add("header-flex-new");
   let gameDetails = document.getElementById("main-area");
   gameDetails.classList.add("flex-column");
   gameDetails.innerHTML = `<div class="name-and-communityhub center">
@@ -128,12 +131,13 @@ const renderSingleGame = async (appid) => {
             <div class="single-game-details">
               <img class="single-game-picture" src="${game.header_image}">
               <div class="language-and-platform">
-                <div class="header-section-styles">
+                <div class="second-header-section-styles">
                   <div>Include total ${game.achievements} achievements</div>
                   <div>Supported Platforms</div>
+                  <div>Supported Language</div>
                 </div>
-                <div class="details-section-styles">
-                  <img src="">
+                <div class="second-details-section-styles">
+                  <div>sss</div>
                   <div class="platforms">
                     <ul class="ul-platforms">
                       <li>Windows</li>
@@ -141,6 +145,7 @@ const renderSingleGame = async (appid) => {
                       <li>Linux</li>
                     </ul>
                   </div>
+                  <div>English</div>
                 </div>
               </div>
             </div>
@@ -156,8 +161,8 @@ const renderSingleGame = async (appid) => {
                     <div>Total Reviews</div>
                   </div>
                   <div class="details-section-styles">
-                    <div>Mostly Positive (84%)</div>
-                    <div>1005586</div>
+                    <div>Mostly Positive (${Math.round(100 - (game.negative_ratings / game.positive_ratings * 100))}%)</div>
+                    <div>${game.positive_ratings + game.negative_ratings} Users</div>
                   </div>
                 </div>
               </div>
@@ -167,7 +172,7 @@ const renderSingleGame = async (appid) => {
                     <div>Release Date</div>
                   </div>
                   <div class="details-section-styles">
-                    <div>21 Aug 12</div>
+                    <div>${game.release_date}</div>
                   </div>
                 </div>
               </div>
@@ -178,7 +183,7 @@ const renderSingleGame = async (appid) => {
                     <div>Publisher</div>
                   </div>
                   <div class="details-section-styles">
-                    <div>Valve</div>
+                    <div>${game.developer}</div>
                     <div>Valve</div>
                   </div>
                 </div>
@@ -203,6 +208,13 @@ const renderSingleGame = async (appid) => {
         const li = document.createElement("li");
         li.innerHTML = tag;
         ul.appendChild(li);
+      });
+        const ulTagsProduct = gameDetails.querySelector(".popular-tags");
+      ulTagsProduct.innerHTML = "";
+      game.steamspy_tags.forEach((tagsProduct) => {
+        const liTagsProduct = document.createElement("li");
+        liTagsProduct.innerHTML = tagsProduct;
+        ulTagsProduct.appendChild(liTagsProduct);
       });
 }
 
